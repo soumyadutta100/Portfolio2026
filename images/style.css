@@ -1180,6 +1180,646 @@ a {
     }
 }
 
+
+/*CTA*/
+
+/* ==========================================================================
+   PORTFOLIO CTA BANNER
+   ========================================================================== */
+.portfolio-cta-banner {
+    position: relative;
+    margin-top: 4rem;
+    padding: 3.5rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-cta-banner:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.cta-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.cta-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #007bff, #00d2ff);
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+    animation: ctaPulse 2s infinite alternate;
+}
+
+.cta-banner-content h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.cta-banner-content p {
+    color: #a0a0a0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Button UI Variations */
+.cta-banner-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+    background: #007bff;
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-cta-primary:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+.btn-cta-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-cta-secondary i {
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+}
+
+.btn-cta-secondary:hover i {
+    transform: translateX(4px);
+}
+
+/* Decorative Orbs inside Banner */
+.cta-decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.15) 0%, transparent 70%);
+    filter: blur(20px);
+    z-index: 1;
+}
+
+.circle-1 {
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    left: -100px;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    right: -150px;
+}
+
+/* Keyframe for subtle dynamic movement */
+@keyframes ctaPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); box-shadow: 0 8px 25px rgba(0, 210, 255, 0.6); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .portfolio-cta-banner {
+        padding: 2.5rem 1.5rem;
+    }
+    .cta-banner-content h2 {
+        font-size: 1.6rem;
+    }
+    .cta-banner-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .btn-cta-primary, .btn-cta-secondary {
+        width: 100%;
+    }
+}
+
+
+
+/*gallery*/
+/* ==========================================================================
+   STYLE TOKENS & FONTS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --G-bg-deep: #080810;
+    --G-bg-card: #121225;
+    --G-accent: #00df9a;
+    --G-accent-glow: rgba(0, 223, 154, 0.2);
+    --G-text-light: #f8f9fa;
+    --G-text-muted: #94a3b8;
+    --G-transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --G-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+.G-gallery-body {
+    background-color: var(--G-bg-deep);
+    color: var(--G-text-light);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   AMBIENT RETICULE BACKGROUND VISUALS
+   ========================================================================== */
+.G-canvas-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.G-mesh-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(18, 18, 37, 0.3) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(18, 18, 37, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.G-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.14;
+    z-index: -1;
+}
+
+.G-orb-1 {
+    top: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: var(--G-accent);
+}
+
+.G-orb-2 {
+    bottom: 5%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: #3b82f6;
+}
+
+/* ==========================================================================
+   HEADER NAVIGATION MODULE
+   ========================================================================== */
+.G-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 7%;
+    background: rgba(8, 8, 16, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.G-logo {
+    font-size: 1.7rem;
+    color: var(--G-text-light);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.G-logo span {
+    color: var(--G-accent);
+}
+
+.G-navbar a {
+    font-size: 1.05rem;
+    color: var(--G-text-light);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: var(--G-transition-smooth);
+}
+
+.G-navbar a:hover,
+.G-navbar a.G-active {
+    color: var(--G-accent);
+    text-shadow: 0 0 10px var(--G-accent-glow);
+}
+
+.G-menu-toggle, .G-menu-icon {
+    display: none;
+}
+
+/* ==========================================================================
+   LAYOUT STRUCTURE CONTAINERS
+   ========================================================================== */
+.G-main-container {
+    padding: 8.5rem 0 4rem 0;
+}
+
+.G-container {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.G-page-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.G-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.G-title span {
+    color: var(--G-accent);
+}
+
+.G-subtitle {
+    color: var(--G-text-muted);
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   DYNAMIC COMPONENT RADIO FILTER MATRICES
+   ========================================================================== */
+.G-filter-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 4rem;
+}
+
+.G-tab-btn {
+    padding: 0.55rem 1.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 50px;
+    color: var(--G-text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--G-transition-smooth);
+}
+
+.G-tab-btn:hover {
+    border-color: var(--G-accent);
+    background: rgba(0, 223, 154, 0.04);
+}
+
+/* Toggle Bind Automations for Content Selections */
+#G-filter-all:checked ~ .G-filter-tabs label[for="G-filter-all"],
+#G-filter-ux:checked ~ .G-filter-tabs label[for="G-filter-ux"],
+#G-filter-vector:checked ~ .G-filter-tabs label[for="G-filter-vector"],
+#G-filter-books:checked ~ .G-filter-tabs label[for="G-filter-books"],
+#G-filter-social:checked ~ .G-filter-tabs label[for="G-filter-social"],
+#G-filter-reports:checked ~ .G-filter-tabs label[for="G-filter-reports"],
+#G-filter-logos:checked ~ .G-filter-tabs label[for="G-filter-logos"],
+#G-filter-brochure:checked ~ .G-filter-tabs label[for="G-filter-brochure"],
+#G-filter-presentations:checked ~ .G-filter-tabs label[for="G-filter-presentations"],
+#G-filter-print:checked ~ .G-filter-tabs label[for="G-filter-print"] {
+    background: var(--G-accent);
+    color: #000;
+    font-weight: 600;
+    border-color: var(--G-accent);
+    box-shadow: 0 0 15px var(--G-accent-glow);
+}
+
+/* Item List Sorting Filter Logic Routing Rules */
+#G-filter-ux:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-ux),
+#G-filter-vector:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-vector),
+#G-filter-books:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-books),
+#G-filter-social:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-social),
+#G-filter-reports:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-reports),
+#G-filter-logos:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-logos),
+#G-filter-brochure:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-brochure),
+#G-filter-presentations:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-presentations),
+#G-filter-print:checked ~ .G-gallery-grid .G-gallery-item:not(.G-cat-print) {
+    display: none;
+}
+
+/* ==========================================================================
+   GALLERY DISPLAY GRID & ADAPTIVE CARD BLOCKS
+   ========================================================================== */
+.G-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.G-gallery-item {
+    animation: G-itemEntrance 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.G-card {
+    background: var(--G-bg-card);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--G-card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--G-transition-smooth);
+}
+
+.G-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 223, 154, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 223, 154, 0.08);
+}
+
+.G-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background: #15152a;
+}
+
+.G-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--G-transition-smooth);
+}
+
+.G-card:hover .G-img {
+    transform: scale(1.06);
+}
+
+.G-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 16, 0.78);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: var(--G-transition-smooth);
+}
+
+.G-card:hover .G-overlay {
+    opacity: 1;
+}
+
+.G-zoom-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--G-accent);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transform: translateY(15px);
+    transition: var(--G-transition-smooth);
+}
+
+.G-card:hover .G-zoom-btn {
+    transform: translateY(0);
+}
+
+.G-zoom-btn:hover {
+    background: var(--G-text-light);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.G-info {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.G-tag {
+    color: var(--G-accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.G-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+}
+
+.G-info p {
+    color: var(--G-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   NAVIGATION RETURN ACTION BANNER
+   ========================================================================== */
+.G-back-banner {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.G-btn-return {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.9rem 2.4rem;
+    background: transparent;
+    border: 2px solid var(--G-accent);
+    color: var(--G-text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--G-transition-smooth);
+}
+
+.G-btn-return:hover {
+    background: var(--G-accent);
+    color: #000;
+    box-shadow: 0 0 20px var(--G-accent-glow);
+    transform: translateX(-4px);
+}
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+.G-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem 0;
+    text-align: center;
+    background: rgba(6, 6, 12, 0.9);
+}
+
+.G-footer p {
+    color: var(--G-text-muted);
+    font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   KEYFRAME TRANSLATIONSPOOL
+   ========================================================================== */
+@keyframes G-itemEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE VIEWPORT STYLES (TABLET & SMARTPHONES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .G-container {
+        width: 90%;
+    }
+    
+    .G-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .G-menu-icon {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--G-text-light);
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .G-navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 280px;
+        height: 100vh;
+        background: rgba(12, 12, 24, 0.98);
+        backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 2rem;
+        gap: 1.8rem;
+        transition: var(--G-transition-smooth);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .G-navbar a {
+        margin-left: 0;
+        font-size: 1.15rem;
+    }
+
+    #G-menu-toggle:checked ~ .G-navbar {
+        right: 0;
+    }
+
+    .G-title {
+        font-size: 2.3rem;
+    }
+
+    .G-filter-tabs {
+        gap: 0.4rem;
+    }
+
+    .G-tab-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .G-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .G-title {
+        font-size: 2rem;
+    }
+}
+
 /* ==========================================================================
    Portfolio "View More" CTA Placement
    ========================================================================== */
