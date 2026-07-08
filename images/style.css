@@ -1179,3 +1179,29 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Portfolio "View More" CTA Placement
+   ========================================================================== */
+.portfolio-more-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.portfolio-more-cta .btn-outline {
+    padding: 14px 36px; /* slightly wider for clear visibility */
+    font-size: 1rem;
+}
+
+.portfolio-more-cta .btn-outline i {
+    font-size: 0.85rem;
+    transition: var(--transition-smooth);
+}
+
+/* Subtle icon push effect on hover */
+.portfolio-more-cta .btn-outline:hover i {
+    transform: translateX(5px);
+}
