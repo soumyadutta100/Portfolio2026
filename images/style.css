@@ -924,7 +924,7 @@ a {
 
 #all:checked ~ .filter-tabs [for="all"],
 #UX:checked ~ .filter-tabs [for="UX"],
-#vectors:checked ~ .filter-tabs [for="vectors"],
+#presentation:checked ~ .filter-tabs [for="presentation"],
 #Book-covers:checked ~ .filter-tabs [for="Book-covers"],
 #branding:checked ~ .filter-tabs [for="branding"],
 #logo:checked ~ .filter-tabs [for="logo"],
@@ -938,7 +938,7 @@ a {
 }
 
 #UX:checked ~ .portfolio-grid .portfolio-item:not(.p-UX),
-#vectors:checked ~ .portfolio-grid .portfolio-item:not(.p-vectors),
+#presentation:checked ~ .portfolio-grid .portfolio-item:not(.p-presentation),
 #Book-covers:checked ~ .portfolio-grid .portfolio-item:not(.p-Book-covers),
 #branding:checked ~ .portfolio-grid .portfolio-item:not(.p-branding),
 #logo:checked ~ .portfolio-grid .portfolio-item:not(.p-logo),
